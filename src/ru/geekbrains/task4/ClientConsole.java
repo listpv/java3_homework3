@@ -30,60 +30,20 @@ public class ClientConsole
             Student student;
             while (true)
             {
-//                String str = in.readUTF();
-//                if (str.equals("это сервер /end"))
-//                {
-//                    out.writeUTF("это клиент /end");
-//                    break;
-//                }
+
                 student = (Student)ois.readObject();
                 student.info();
-//                System.out.println("Y N");
-//                String var = sc.nextLine();
-//                    if(var.equalsIgnoreCase("N"))
-//                    {
-//                        out.writeUTF("/end");
-//                        break;
-//                    }
-//                    if(var.equalsIgnoreCase("Y"))
-//                    {
-//                        out.writeUTF("contin");
-//                    }
-
-//                oos.close();
-
-//                System.out.println( str);
-//                String scannerStr = sc.nextLine();
-//                String var;
-//                boolean stp = false;
-//                ArrayList<String> arString = new ArrayList<>();
-//                while (true)
-//                {
-//                    System.out.println("Y N");
-//                    var = sc.nextLine();
-//                    if(var.equalsIgnoreCase("N"))
-//                    {
-//                        stp = true;
-//                        break;
-//                    }
-//                    if(var.equalsIgnoreCase("/end"))
-//                    {
-//                        stp = true;
-//                        break;
-//                    }
-//                    if(var.equalsIgnoreCase("*/*"))
-//                    {
-//                        break;
-//                    }
-//                    arString.add(var);
-//                }
-//                if(stp)
-//                {
-//                    out.writeUTF("это клиент /end");
-//                }
-//                else {
-//                    out.writeUTF("Kлиент написал " + arString);
-//                }
+                System.out.println("Y N");
+                String var = sc.nextLine();
+                    if(var.equalsIgnoreCase("N"))
+                    {
+                        out.writeUTF("/end");
+                        break;
+                    }
+                    if(var.equalsIgnoreCase("Y"))
+                    {
+                        out.writeUTF("contin");
+                    }
 
             }
         }

@@ -12,7 +12,7 @@ public class SerializeMain
             public void run() {
                 try {
                     new ServerConsole();
-                } catch (ClassNotFoundException e) {
+                } catch (ClassNotFoundException | IOException e) {
                     e.printStackTrace();
                 }
             }
@@ -27,7 +27,5 @@ public class SerializeMain
                 }
             }
         }).start();
-
-
     }
 }

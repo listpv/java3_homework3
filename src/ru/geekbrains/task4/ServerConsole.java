@@ -18,7 +18,8 @@ public class ServerConsole
     Scanner sc;
     final int PORT = 8189;
 
-    public ServerConsole() throws ClassNotFoundException {
+    public ServerConsole() throws ClassNotFoundException, IOException
+    {
         try
         {
             serverSocket = new ServerSocket(PORT);
@@ -39,17 +40,18 @@ public class ServerConsole
             int age;
             while (true)
             {
-//                if(flag)
-//                {
-////                    String str = (String)ois.readObject();
-//                        String str = in.readUTF();
-//                        if (str.equalsIgnoreCase("/end"))
-//                        {
-//                            break;
-//                        }
-////                    ois.close();
-//                }
-////                    String var;
+                if(flag)
+                {
+                        String str = in.readUTF();
+                        if (str.equalsIgnoreCase("/end"))
+                        {
+                            break;
+                        }
+                        else
+                            {
+                                System.out.println("Продолжаем.");
+                            }
+                }
                 System.out.println("Enter book");
                 bookName = sc.nextLine();
                 System.out.println("Enter name.");
@@ -58,68 +60,13 @@ public class ServerConsole
                 id = sc.nextInt();
                 System.out.println("Enter age;");
                 age = sc.nextInt();
-//                System.out.println("Enter id");
-//                id = sc.nextInt();
-//                        if(var.equalsIgnoreCase("/end"))
-//                        {
-//                            stp = true;
-//                            break;
-//                        }
+
                 student = new Student(id, name, age);
                 book = new Book(bookName);
                 student.setBook(book);
-//                        ObjectOutputStream oos = new ObjectOutputStream((OutputStream) out);
+
                 oos.writeObject(student);
-//                        flag = true;
-//                        break;
-//                        if(var.equalsIgnoreCase("*/*"))
-//                        {
-//                            break;
-//                        }
-//                        arString.add(var);
- //                   }
-//                    if(stp)
-//                    {
-//                        out.writeUTF("это сервер /end");
-//                    }
-//                    else
-//                    {
-//                        out.writeUTF("Сервер написал " + arString.toString());
-//                    }
-//                    flag = false;
-//                }
-//                String str = in.readUTF();
-//                if (str.equals("это клиент /end"))
-//                {
-//                    out.writeUTF("это сервер /end");
-//                    break;
-//                }
-//                System.out.println(str);
-//                String scannerStr = sc.nextLine();
-//                String var;
-//                boolean stp = false;
-//                ArrayList<String> arString = new ArrayList<>();
-//                while (true)
-//                {
-//                    var = sc.nextLine();
-//                    if(var.equalsIgnoreCase("/end"))
-//                    {
-//                        stp = true;
-//                        break;
-//                    }
-//                    if(var.equalsIgnoreCase("*/*"))
-//                    {
-//                        break;
-//                    }
-//                    arString.add(var);
-//                }
-//                if(stp)
-//                {
-//                    out.writeUTF("это сервер /end");
-//                }
-//                else {
-//                    out.writeUTF("Сервер написал " + arString);
-//                }
+                flag = true;
             }
         }
         catch (IOException e) {
@@ -131,19 +78,18 @@ public class ServerConsole
             {
                 oos.close();
                 socket.close();
-            }
-            catch (IOException e)
+            } catch (IOException e)
             {
                 e.printStackTrace();
             }
-            try
-            {
+            try {
                 serverSocket.close();
-            }
-            catch (IOException e)
+            } catch (IOException e)
             {
                 e.printStackTrace();
             }
+
+
         }
     }
 }
