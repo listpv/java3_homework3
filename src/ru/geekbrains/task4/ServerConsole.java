@@ -12,9 +12,7 @@ public class ServerConsole
     ServerSocket serverSocket;
     Socket socket;
     DataInputStream in;
-    DataOutput out;
     ObjectOutputStream oos;
-//    ObjectInputStream ois;
     Scanner sc;
     final int PORT = 8189;
 
@@ -27,9 +25,7 @@ public class ServerConsole
             socket = serverSocket.accept();
             System.out.println("Клиент подключился");
             in = new DataInputStream(socket.getInputStream());
-//            out = new DataOutputStream(socket.getOutputStream());
             oos = new ObjectOutputStream(socket.getOutputStream());
-//            ois = new ObjectInputStream(socket.getInputStream());
             sc = new Scanner(System.in);
             boolean flag = false;
             Student student;

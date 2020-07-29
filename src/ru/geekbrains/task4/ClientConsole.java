@@ -9,9 +9,7 @@ import java.util.Scanner;
 public class ClientConsole
 {
     Socket socket;
-    DataInputStream in;
     DataOutputStream out;
-//    ObjectOutputStream oos;
     ObjectInputStream ois;
     final String IP_ADDRESS = "localhost";
     final int PORT = 8189;
@@ -22,10 +20,7 @@ public class ClientConsole
         {
             socket = new Socket(IP_ADDRESS, PORT);
             ois = new ObjectInputStream(socket.getInputStream());
-//            in = new DataInputStream(socket.getInputStream());
             out = new DataOutputStream(socket.getOutputStream());
-//            oos = new ObjectOutputStream(socket.getOutputStream());
-
             sc = new Scanner(System.in);
             Student student;
             while (true)
@@ -64,34 +59,6 @@ public class ClientConsole
             }
 
         }
-/*        new Thread(new Runnable()
-        {
-            @Override
-            public void run()
-            {
-                try
-                {
-                    while (true)
-                    {
-//                        String scannerStr = sc.nextLine();
-//                        out.writeUTF("это клиент " + scannerStr);
-                        String str = in.readUTF();
-                        if (str.equals("это сервер /end"))
-                        {
-                            break;
-                        }
-                        System.out.println( str);
-                        String scannerStr = sc.nextLine();
-                        out.writeUTF("это клиент " + scannerStr);
-
-                    }
-                }
-                catch (Exception e)
-                {
-                    e.printStackTrace();
-                }
-            }
-        }).start();*/
 
     }
 }
