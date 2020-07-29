@@ -49,18 +49,17 @@ public class ServerConsole
                         }
                         else
                             {
-                                System.out.println("Продолжаем.");
+                                System.out.println(str);
                             }
                 }
-                System.out.println("Enter book");
-                bookName = sc.nextLine();
                 System.out.println("Enter name.");
                 name = sc.nextLine();
+                System.out.println("Enter book");
+                bookName = sc.nextLine();
                 System.out.println("Enter id");
                 id = sc.nextInt();
                 System.out.println("Enter age;");
                 age = sc.nextInt();
-
                 student = new Student(id, name, age);
                 book = new Book(bookName);
                 student.setBook(book);

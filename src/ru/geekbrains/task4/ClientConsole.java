@@ -42,7 +42,7 @@ public class ClientConsole
                     }
                     if(var.equalsIgnoreCase("Y"))
                     {
-                        out.writeUTF("contin");
+                        out.writeUTF("Продолжаем.");
                     }
 
             }
