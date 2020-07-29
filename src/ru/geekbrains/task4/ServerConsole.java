@@ -50,14 +50,14 @@ public class ServerConsole
 ////                    ois.close();
 //                }
 ////                    String var;
+                System.out.println("Enter book");
+                bookName = sc.nextLine();
                 System.out.println("Enter name.");
                 name = sc.nextLine();
                 System.out.println("Enter id");
                 id = sc.nextInt();
                 System.out.println("Enter age;");
                 age = sc.nextInt();
-                System.out.println("Enter book");
-                bookName = sc.nextLine();
 //                System.out.println("Enter id");
 //                id = sc.nextInt();
 //                        if(var.equalsIgnoreCase("/end"))
