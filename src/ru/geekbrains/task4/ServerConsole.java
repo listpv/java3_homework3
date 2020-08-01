@@ -32,8 +32,8 @@ public class ServerConsole
             Book book;
             String name;
             String bookName;
-            int id;
-            int age;
+            String id;
+            String age;
             while (true)
             {
                 if(flag)
@@ -53,10 +53,10 @@ public class ServerConsole
                 System.out.println("Enter book");
                 bookName = sc.nextLine();
                 System.out.println("Enter id");
-                id = sc.nextInt();
+                id = sc.nextLine();
                 System.out.println("Enter age;");
-                age = sc.nextInt();
-                student = new Student(id, name, age);
+                age = sc.nextLine();
+                student = new Student(Integer.parseInt(id), name, Integer.parseInt(age));
                 book = new Book(bookName);
                 student.setBook(book);
 
